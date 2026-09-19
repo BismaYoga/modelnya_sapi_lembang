@@ -9,5 +9,7 @@ __pycache__/
 *$py.class
 .ipynb_checkpoints/
 
-# Website
+# Website & Video
 website/
+video/
+segratruk-video/
