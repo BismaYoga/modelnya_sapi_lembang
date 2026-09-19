@@ -334,5 +334,53 @@
 
 ---
 
-*Log ini akan di-update setiap kali ada prompt baru.*
+## Sesi 3 — 2026-09-19: Integrasi Domain VPS & Deployment Web
+
+### Ringkasan Kegiatan:
+1. **Konfigurasi Domain & VPS**:
+   - IP Server: `202.10.47.34`
+   - Menggunakan wildcard DNS gratis: `http://segratruk.202.10.47.34.nip.io`
+   - Memastikan port 80 aktif dan melayani aplikasi web `segratruk`.
+2. **Penambahan Aset Brand Resmi**:
+   - Menambahkan 4 file aset ke `website/`:
+     - `logo.png`
+     - `hero-landing.png`
+     - `hero-next-lanjut.png`
+     - `gambartruk-home.png`
+3. **Perbaikan Routing Mobile (Android)**:
+   - Memperbaiki alur navigasi agar saat pengguna membuka web untuk pertama kali dari perangkat mobile/Android, selalu diarahkan ke **Landing Page** terlebih dahulu sebelum ke dashboard.
+4. **Git Sync**:
+   - Perubahan di-commit dan di-push ke repositori GitHub `https://github.com/BismaYoga/segratruk.git`.
+
+---
+
+## Sesi 4 — 2026-09-19 & 2026-09-20: Pembuatan Video Iklan SaaS Interaktif (Remotion)
+
+### Prompt: Pembuatan Iklan Video SaaS Landscape
+- User meminta pembuatan video iklan SaaS profesional dengan Remotion dalam format Landscape (1920x1080 @ 30fps) di folder terpisah (`video/`).
+- Mengabaikan folder `video/` dari repository utama melalui `.gitignore`.
+- Mengimplementasikan 5 scene komersial SaaS untuk SEGRATRUK.
+
+### Prompt: Redesign Iklan SaaS Interaktif (Walkthrough, 3D Tilts, Kursor, Latar Cerah)
+- **Instruksi Khusus User**:
+  - Tampilan UI diperlihatkan secara dinamis dengan zoom in dan zoom out ala iklan SaaS modern.
+  - Kamera tidak kaku (menggunakan kemiringan 3D / tilt dinamis).
+  - Menggunakan kursor virtual animasi yang bergerak, melakukan hover, dan memicu efek klik ripple.
+  - Berpindah halaman (*Landing Page* -> *Fleet Command Dashboard*).
+  - Minim teks penjelasan, teks padat micro-copy dalam **Bahasa Indonesia**.
+  - Background berwarna **putih cerah / glassmorphism** dengan pendaran aksen hijau emerald.
+- **Implementasi**:
+  1. `src/components/GlowBackground.tsx`: Latar belakang putih cerah (`#ffffff` / `#f0fdf4`) dengan cyber grid dan pendaran aurora emerald.
+  2. `src/components/BrowserMockup.tsx`: Bingkai browser frosted glass putih dengan traffic lights macOS dan address bar SSL.
+  3. `src/components/VirtualCursor.tsx`: Kursor pointer virtual dengan efek skala tekan dan gelombang klik (*emerald click ripple*).
+  4. `src/components/views/LandingPageView.tsx` & `DashboardView.tsx`: UI berbasis Bahasa Indonesia yang bersih dan interaktif.
+  5. `src/SegratrukCommercial.tsx`: Orchestrator utama 3D camera (`rotateX`, `rotateY`, `rotateZ`, `scale` zoom in/out, pan X/Y).
+  6. **Hasil Render**: Berhasil dirender menjadi file video MP4 final [`video/out/segratruk-commercial.mp4`](file:///C:/Users/Bisma/Downloads/Documents/tanin/video/out/segratruk-commercial.mp4) (18.4 MB).
+
+### Prompt: Penyusunan Dokumen Handover
+- Menyusun dokumen handover lengkap di file [`HANDOVER.md`](file:///C:/Users/Bisma/Downloads/Documents/tanin/HANDOVER.md) mencakup seluruh arsitektur, VPS, model AI, web frontend, video project, dan SOP maintenance.
+
+---
+
+*Log diperbarui pada 20 September 2026.*
 
