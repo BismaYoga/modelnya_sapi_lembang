@@ -1,0 +1,27 @@
+{
+  "class_names": [
+    "Organik",
+    "Anorganik",
+    "Residu"
+  ],
+  "class_indices": {
+    "Organik": 0,
+    "Anorganik": 1,
+    "Residu": 2
+  },
+  "img_size": [
+    224,
+    224
+  ],
+  "model_architecture": "MobileNetV2 (Transfer Learning v2)",
+  "improvements": [
+    "Hybrid Balancing (Organik downsample ke 2000)",
+    "MobileNetV2 + Enhanced Head (BatchNorm, Dense 512\u2192256)",
+    "MixUp Augmentation (alpha=0.2)",
+    "Label Smoothing (0.1)",
+    "Class Weights (balanced)",
+    "Augmentasi agresif (rotation 40, vertical flip, channel shift)",
+    "CosineDecay LR schedule",
+    "Test-Time Augmentation (TTA)"
+  ]
+}
