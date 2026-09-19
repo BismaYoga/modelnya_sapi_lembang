@@ -1,6 +1,5 @@
 # Datasets
 datasets/
-tesdata/
 *.zip
 *.tar.gz
 
