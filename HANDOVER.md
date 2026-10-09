@@ -99,28 +99,65 @@ Proyek video berformat **Landscape (1920x1080 @ 30fps)** berlokasi di direktori 
 ### A. Lokasi File Video Hasil Render
 - **File MP4 Utama**:  
   👉 [`video/out/segratruk-commercial.mp4`](file:///C:/Users/Bisma/Downloads/Documents/tanin/video/out/segratruk-commercial.mp4)  
-  *(Resolusi: 1920x1080 | Format: MP4 | 30 FPS | Durasi: 24 detik / 720 frames | Ukuran: ~18.4 MB)*
+  *(Resolusi: 1920x1080 | Format: MP4 | 30 FPS | Durasi: 30 detik / 900 frames | Ukuran: ~13.7 MB)*
 
-### B. Karakteristik Desain & Storyboard Video
-1. **Background Aesthetic**: Putih cerah (*Light SaaS Studio*) dengan aksen hijau emerald, pendaran aurora orb lembut, dan cyber grid lines halus.
-2. **Dynamic 3D Camera Tilts (Tidak Kaku)**: Menggunakan transformasi ruang 3D (`perspective: 1400px`, `rotateX`, `rotateY`, `rotateZ`), sudut isometrik melayang, serta camera pan & swoop.
-3. **Virtual Animated Cursor**: Pointer kursor halus yang mengarahkan pandangan audiens, lengkap dengan interaksi hover dan animasi klik dengan **gelombang lingkaran klik hijau (*emerald click ripple*)**.
-4. **Alur Interaksi Antar Halaman (Flow)**:
-   - *Act 1 (0s–5.5s)*: Sudut 3D miring pada Landing Page resmi -> kursor meluncur dan mengklik tombol *"Masuk Dashboard"*.
-   - *Act 2 (5.5s–11.5s)*: Layar bertransisi ke Dashboard -> kamera **zoom in tajam** ke panel peta GPS rute armada -> kursor mengklik armada `TRK-01`.
-   - *Act 3 (11.5s–17.5s)*: Kamera meluncur (*glide*) ke panel kanan menyorot **Klasifikasi AI MobileNetV2** -> kursor mengklik switch toggle **"OTOMATIS: AKTIF"** -> counter volume sampah bertambah live.
-   - *Act 4 (17.5s–21s)*: **Grand Zoom Out** dramatis ke sudut isometrik floating window dengan pop-up badge notifikasi 3D: *"Pemilahan Otomatis Berhasil! Efisiensi Rute +42%"*.
-   - *Act 5 (21s–24s)*: Outro elegan dengan logo resmi SEGRATRUK dan tombol call to action `segratruk.202.10.47.34.nip.io`.
-5. **Bahasa & Teks**: Sepenuhnya menggunakan Bahasa Indonesia dengan gaya mikro-copy minimalis (tanpa teks penjelasan panjang).
+### B. Arsitektur 9 Scene Berpacing Cepat & Tata Suara (Audio Synced & Spring Physics)
+Setiap scene dibungkus dalam Remotion `<Sequence>` dengan normalisasi frame lokal (`0 to duration`), memanfaatkan `spring()` physics dan kurva `Easing` untuk gerakan yang organik, elastis, dan bebas dari kesan kaku:
+1. **Scene 1 (0.0s–2.5s) | Opening Title Card**:
+   - Tipografi elegan high-contrast SEGRATRUK (94px) dengan tracking expand dan dual-node SVG (tanpa emoji).
+   - Dua kartu telemetri tech melayang di samping untuk mengisi whitespace.
+   - SFX: Ambient tech riser & scene whoosh.
+2. **Scene 2 (2.5s–5.5s) | Truk Armada sebagai Sumber Data Primer**:
+   - Menghubungkan storytelling fisik: armada truk mengumpulkan sampah dan data di jalanan.
+   - Grid 1540px lebih rapat & besar; 3 Callout sensor dengan spring pop-in dan continuous floating.
+   - SFX: 3x pop audio teratur untuk tiap sensor.
+3. **Scene 3 (5.5s–8.5s) | Mobile App Splash & Interactive Enter**:
+   - Smartphone mockup front-facing dengan idle float lembut & subtle 3D tilt.
+   - Kursor meluncur halus dengan *cubic deceleration* mengklik tombol *"Mulai Jelajahi"* dengan elastic bounce.
+   - SFX: Click UI + whoosh transition.
+4. **Scene 4 (8.5s–12.0s) | Mobile Dashboard — Live Counter Growth**:
+   - Status armada `TRK-01`, live counter berputar cepat naik dari 0 ke 4.200 kg (Organik $2.350\text{ kg}$, Anorganik $1.250\text{ kg}$, Residu $600\text{ kg}$).
+   - Grafik kurva analitik SVG bertumbuh (*scale-Y growth*) dari baseline (+12.4% vs kemarin). Side pills meluncur spring dari kiri-kanan.
+5. **Scene 5 (12.0s–16.0s) | GPS Fleet Tracking & Animated Route Drawing**:
+   - Peta vektor denah kota Denpasar (framing rapat).
+   - **Animated Path Drawing**: Garis rute hijau terang digambar melengkung otomatis di jalan raya (`strokeDashoffset`).
+   - Marker truk melaju di jalurnya, speedometer fluktuatif ($22\text{--}28\text{ km/jam}$), kapasitas tangki terisi ($85\%$).
+6. **Scene 6 (16.0s–19.5s) | AI Sort Toggle & Category Cascade**:
+   - Kursor mengklik switch toggle AI $\rightarrow$ pendaran hijau menyala *"OTOMATIS: AKTIF"*.
+   - 3 kartu pemilahan (Organik, Anorganik, Residu) meluncur masuk bertingkat pasca-klik (*staggered cascade*).
+   - SFX: UI switch click + 3x pop audio.
+7. **Scene 7 (19.5s–23.0s) | 3D Checkmark Celebration & Confetti**:
+   - Pop-up **3D Floating Checkmark Badge** berputar dan meletup dengan 22 partikel konfeti digital multi-warna & multi-bentuk menyebar ke seluruh kanvas dengan gravitasi lembut.
+   - Ticker angka metrics (+42%, 99.2%, 0%).
+   - SFX: Dual bell chime / celebration ding.
+8. **Scene 8 (23.0s–26.5s) | Rute & Jadwal TPS Timeline**:
+   - Isometric 3D tilt (-2.5 deg) dengan timeline penjemputan TPS. Status TPS Sesetan bertransformasi menjadi *"Selesai ✓"* dengan badge pop-in scale & garis konektor SVG beranimasi.
+9. **Scene 9 (26.5s–30.0s) | Grand Brand Outro & CTA**:
+   - Hero card brand resmi SEGRATRUK (940px) dengan logo neon emerald, tracking text expand, 3 floating feature pills.
+   - Tombol CTA interaktif `segratruk.202.10.47.34.nip.io` dengan efek breathing, elastic press, dan expanding ripple ring.
+   - SFX: Click audio + musical outro resolution.
 
 ### C. Komponen Utama Remotion (`video/src/`)
-- `Root.tsx`: Registrasi komposisi video 1920x1080 30fps.
-- `SegratrukCommercial.tsx`: Orchestrator utama timeline, 3D camera rig, kursor, dan transisi halaman.
-- `components/BrowserMockup.tsx`: Bingkai browser frosted glass putih dengan traffic lights macOS dan address bar SSL.
-- `components/GlowBackground.tsx`: Latar belakang putih cerah dengan pendaran hijau emerald.
-- `components/VirtualCursor.tsx`: Kursor virtual animasi dengan gelombang ripple klik.
-- `components/views/LandingPageView.tsx`: Komponen antarmuka Landing Page.
-- `components/views/DashboardView.tsx`: Komponen antarmuka Fleet Command & Klasifikasi AI.
+- `Root.tsx`: Registrasi komposisi video 1920x1080 30fps (900 frames / 30 detik).
+- `SegratrukCommercial.tsx`: Master timeline orchestrator 9 scene dengan sinkronisasi audio BGM & SFX.
+- `generate_audio.py`: Script synthesizer audio stereo 44.1kHz (`bgm.wav`, `whoosh.wav`, `click.wav`, `pop.wav`, `chime.wav`).
+- `scenes/`:
+  - `Scene1TitleCard.tsx`: Title card pembuka tipografi elegan.
+  - `Scene2TruckSource.tsx`: Truk armada sumber data dengan 3 callout sensor.
+  - `Scene3AppSplash.tsx`: Splash screen mobile framing rapat.
+  - `Scene4DashboardCounters.tsx`: Dashboard live counter 0 -> 4.200 kg & grafik tumbuh.
+  - `Scene5GPSTracking.tsx`: Peta vektor denpasar, animated path drawing, telemetri HUD.
+  - `Scene6AISortToggle.tsx`: AI sort switch click & staggered cards.
+  - `Scene7Celebration.tsx`: 3D checkmark pop-up & konfeti digital.
+  - `Scene8RouteTimeline.tsx`: Timeline penjemputan TPS & status pop-in.
+  - `Scene9BrandOutro.tsx`: Grand outro brand hero card & tombol CTA.
+- `components/`:
+  - `PhoneMockup.tsx`: Hardware mockup smartphone 3D (titanium bezel, Dynamic Island, status bar).
+  - `GlowBackground.tsx`: Latar studio cerah dengan aurora emerald dan grid cyber.
+  - `VirtualCursor.tsx`: Kursor pointer virtual dengan efek ripple klik hijau.
+  - `mobile/`: Komponen layar mobile SEGRATRUK individual.
+
+
 
 ---
 
